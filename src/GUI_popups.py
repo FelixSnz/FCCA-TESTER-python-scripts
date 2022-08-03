@@ -111,10 +111,6 @@ def center(win):
 
     win.deiconify()
 
-def destroy_enabled():
-    global can_destroy
-    can_destroy = True
-
 def show_error(e, tittle_error):
         exc_type, exc_obj, exc_tb = exc_info()
         error = "     error: {0} \n \
@@ -122,12 +118,6 @@ def show_error(e, tittle_error):
     in line: {2} \n \
     in file: {3}".format(e, exc_type, exc_tb.tb_lineno, os.path.basename(__file__))
         messagebox.showerror(tittle_error, error)
-
-
-def try_to_destroy(root):
-    global can_destroy
-    if can_destroy:
-        root.destroy()
 
 
 def on_closing(root):
@@ -138,16 +128,7 @@ def on_closing(root):
 
 def destroy_self(root):
     root.destroy()
-    
-
-    pass
-
-def destroy_current_windows():
-    for window in current_windows:
-        window.mainloop()
-        window.destroy()
         
-
 
 def on_quit_response(resp, root):
     global quit_confirmed

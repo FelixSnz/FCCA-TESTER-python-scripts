@@ -1,5 +1,5 @@
 from pynput import keyboard
-from GUI_popups import ask_quit, destroy_enabled
+from GUI_popups import ask_quit
 import sys, os
 from concurrent import futures
 

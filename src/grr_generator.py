@@ -22,7 +22,7 @@ GRRsSavePath = config["Paths"]["GRRs"]
 
 log_master_path = config["Paths"]['LogMaster']
 
-logs_path = "resources\\GRR"
+logs_path = r"resources\OUT"
 
 redFill = PatternFill(start_color='EE1111',
                 end_color='EE1111',
@@ -46,9 +46,10 @@ def main():
     grr_data = []
     themoking_grr = GRR("..\\test.xlsx")
 
-    for log_fname in list(glob.iglob(logs_path + '/**', recursive=True))[1:]:
-        themoking_grr.append_log(log_fname)
-        print(log_fname)
+    for log_fname in glob.iglob(logs_path + '/**', recursive=True):
+        if os.path.isfile(log_fname):
+            themoking_grr.append_log(log_fname)
+            print(log_fname)
 
 class GRR:
     def __init__(self, save_name, file_exists=False) -> None:

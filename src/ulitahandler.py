@@ -24,7 +24,7 @@ class ProgramHandler():
         pyautogui.click(pos)
 
     def typewrite(self, msg):
-        print("ti8ping")
+        print("tiping")
         pyautogui.typewrite(msg)
     
     def close(self):
