@@ -1,0 +1,222 @@
+[
+    {
+        "name":"INTERNALL POWER SOURCE",
+        "id":1,
+        "tests": 
+        [
+            {
+                "name":"Check Load R",
+                "units":"ohms"
+            },
+            {
+                "name":"Test PowerSource 5V",
+                "units":"volts",
+                "SET": ["CFR=1, CFC=1"],
+                "sub tests":
+                [
+                    "FCCA output voltage",
+                    "FCCA input voltage"
+                ]
+            },
+            {
+                "name":"Test PowerSource 12V",
+                "units":"volts",
+                "SET": ["CFR=1, CFC=1, EXTERNAL LOAD = ON"],
+                "sub tests":
+                [
+                    "FCCA output voltage",
+                    "FCCA input voltage"
+                ]
+            },
+            {
+                "name":"Test PowerSource 24V",
+                "units":"volts",
+                "SET": ["CFR=1, CFC=1"],
+                "sub tests":
+                [
+                    "FCCA output voltage",
+                    "FCCA input voltage"
+                ]
+            }
+            
+        ]
+    },
+    {
+        "name":"FUNCTIONAL TEST + BLOCKING",
+        "id":2,
+        "tests":
+        [
+            {
+                "name":"TEST SIGNAL CFC",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=0, EFH=0",
+                    "CFC = 1, CFR=0, EFL=0, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"TEST SIGNAL CFR",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=1, EFL=0, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+
+                ]
+            },
+            {
+                "name":"TEST SIGNAL EFL",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=1, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"TEST SIGNAL EFH",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=0, EFH=1",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"Measure rezistance R1 and R2",
+                "units":"ohms"
+            },
+            {
+                "name":"Measure rezistance R2 and R3",
+                "units":"ohms"
+            },
+            {
+                "name":"Measure rezistance R1 and R3",
+                "units":"ohms"
+            },
+            {
+                "name":"BLOCKING SIGNALS EFL VS. EFH WITHOUT LOAD",
+                "units":"tbd",
+                "SET":
+                [
+                    "EFH=0, EFL=0",
+                    "EFH=1, EFL=0",
+                    "EFH=1, EFL=1",
+                    "EFH=0, EFL=1"
+                ]
+            }
+        ]
+
+    },
+    {
+        "name":"HIGH VOLTAGE TEST",
+        "id":3,
+        "tests":
+        [
+            {
+                "name":"TEST SIGNAL CFC",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=0, EFH=0",
+                    "CFC = 1, CFR=0, EFL=0, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"TEST SIGNAL CFR",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=1, EFL=0, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"TEST SIGNAL EFL",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=1, EFH=0",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            },
+            {
+                "name":"TEST SIGNAL EFH",
+                "units":"tbd",
+                "SET":
+                [
+                    "CFC = 0, CFR=0, EFL=0, EFH=1",
+                    "CFC = 0, CFR=0, EFL=0, EFH=0"
+                ]
+            }
+        ]
+    },
+    {
+        "name":"GROUND FAULT DETECTICON",
+        "id":5,
+        "tests": 
+        [
+            {
+                "name":"5V Power Source test",
+                "units":"volts"
+            },
+            {
+                "name":"PowerSource - 40V",
+                "units":"volts"
+            },
+            {
+                "name":"PowerSource - 100V",
+                "units":"volts"
+            },
+            {
+                "name":"PowerSource - 600V",
+                "units":"volts"
+            }
+
+        ]
+
+    },
+    {
+        "name":"TEST of RED LED",
+        "id":6,
+        "tests": 
+        [
+            {
+                "name":"Active RED LED",
+                "units":"tbd"
+            }
+        ]
+    },
+    {
+        "name":"LED TEST",
+        "id":7,
+        "tests": 
+        [
+            {
+                "name":"Test Green Leds",
+                "units":"tbd",
+                "sub tests":
+                [
+                    "Active Signals CFC+CFR+EFL+EFH"
+                ]
+            },
+            {
+                "name":"Test Yellow Leds",
+                "units":"tbd",
+                "sub tests":
+                [
+                    "Active Signal CFC + EFL",
+                    "Deactive Signal CFC + EFL",
+                    "Deactive Signal CFR + EFH",
+                    "Deactive Signal CFR + EFH"
+
+                ]
+            }
+            
+            
+        ]
+    }
+]
